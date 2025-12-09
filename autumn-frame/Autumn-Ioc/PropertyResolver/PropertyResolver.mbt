@@ -255,7 +255,7 @@ fn parse_property_expr(key : String) -> PropertyExpr? {
 /// 查找字符在字符串中的位置
 fn index_of(s : String, ch : Char) -> Int? {
   for i = 0; i < s.length(); i = i + 1 {
-    if s.code_unit_at(i) == ch {
+    if s.code_unit_at(i) == Char::to_int(ch).to_uint16() {
       return Some(i)
     }
   }

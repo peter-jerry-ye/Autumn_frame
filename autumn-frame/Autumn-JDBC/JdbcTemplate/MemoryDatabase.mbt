@@ -775,7 +775,7 @@ pub fn MemoryDatabase::execute_update(
           if contains(where_clause_var, "id =") {
             // 提取参数值（第一个参数是 id 的值）
             if params.length() > 0 {
-              let id_value = params.code_unit_at(0)
+              let id_value = params[0]
 
               // 查找行
               match new_table.get(id_value) {
@@ -855,7 +855,7 @@ pub fn MemoryDatabase::execute_delete(
           if contains(where_clause_var, "id =") {
             // 第一个参数是 id 的值
             if params.length() > 0 {
-              let id_value = params.code_unit_at(0)
+              let id_value = params[0]
               match new_table.get(id_value) {
                 Some(_row) => {
                   new_table.remove(id_value)

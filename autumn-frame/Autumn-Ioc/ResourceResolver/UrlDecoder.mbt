@@ -46,10 +46,10 @@ fn parse_hex_byte(hex : String) -> Char? {
   if c1_str.length() == 0 || c2_str.length() == 0 {
     return None
   }
-  let c1 = c1_str.code_unit_at(0)
-  let c2 = c2_str.code_unit_at(0)
-  let high = hex_char_to_int(c1)
-  let low = hex_char_to_int(c2)
+  let c1 = c1_str[0]
+  let c2 = c2_str[0]
+  let high = hex_char_to_int(c1.unsafe_to_char())
+  let low = hex_char_to_int(c2.unsafe_to_char())
   match (high, low) {
     (Some(h), Some(l)) => {
       let value = h * 16 + l

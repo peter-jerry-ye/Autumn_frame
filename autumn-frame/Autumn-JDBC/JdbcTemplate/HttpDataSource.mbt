@@ -215,8 +215,8 @@ fn parse_int(s : String) -> Int? {
   }
   while i < s.length() {
     let c = s.code_unit_at(i)
-    if c >= '0' && c <= '9' {
-      result = result * 10 + (c - '0')
+    if c >= Char::to_int('0').to_uint16() && c <= Char::to_int('9').to_uint16() {
+      result = result * 10 + (c.to_int() - Char::to_int('0'))
       i = i + 1
     } else {
       break
@@ -353,7 +353,7 @@ pub async fn HttpDataSource::async_batch_execute(
       json = json + ","
     }
     json = json + "["
-    let params = params_list.code_unit_at(batch_idx)
+    let params = params_list[batch_idx]
     let mut param_idx = 0
     while param_idx < params.length() {
       if param_idx > 0 {
