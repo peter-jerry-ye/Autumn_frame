@@ -231,7 +231,8 @@ fn parse_insert(sql : String) -> SqlStatement? {
         Some(table_end) => {
           // 提取表名（跳过空格）
           let mut table_name_start = start + 11
-          while table_name_start < table_end && sql.code_unit_at(table_name_start) == ' ' {
+          while table_name_start < table_end &&
+                sql.code_unit_at(table_name_start) == ' ' {
             table_name_start = table_name_start + 1
           }
 
@@ -262,7 +263,8 @@ fn parse_insert(sql : String) -> SqlStatement? {
               // 找到 VALUES（支持大小写不敏感）
               // 先跳过可能的空格
               let mut search_start = cols_end + 1
-              while search_start < sql.length() && sql.code_unit_at(search_start) == ' ' {
+              while search_start < sql.length() &&
+                    sql.code_unit_at(search_start) == ' ' {
                 search_start = search_start + 1
               }
               let mut vals_start : Int? = None
@@ -280,7 +282,8 @@ fn parse_insert(sql : String) -> SqlStatement? {
                   let vals_len = 6 // "VALUES" 或 "values" 的长度
                   let mut paren_pos = vals_start_pos + vals_len
                   // 跳过空格
-                  while paren_pos < sql.length() && sql.code_unit_at(paren_pos) == ' ' {
+                  while paren_pos < sql.length() &&
+                        sql.code_unit_at(paren_pos) == ' ' {
                     paren_pos = paren_pos + 1
                   }
                   match find_from(sql, "(", paren_pos) {

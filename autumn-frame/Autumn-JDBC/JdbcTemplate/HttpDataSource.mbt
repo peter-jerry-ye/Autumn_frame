@@ -126,8 +126,12 @@ pub fn HttpDataSource::execute(
 /// 使用示例：
 /// ```moonbit
 /// async fn example() {
-///   let data_source = HttpDataSource::new(HttpDataSourceConfig::new("http://localhost:8080"))
-///   let rows = data_source.async_execute("INSERT INTO users (name) VALUES (?)", ["test"])
+///   let data_source = HttpDataSource::new(
+///     HttpDataSourceConfig::new("http://localhost:8080"),
+///   )
+///   let rows = data_source.async_execute("INSERT INTO users (name) VALUES (?)", [
+///     "test",
+///   ])
 ///   println("影响行数: \{rows}")
 /// }
 /// ```
