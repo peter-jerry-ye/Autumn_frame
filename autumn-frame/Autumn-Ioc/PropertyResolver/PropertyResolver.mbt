@@ -255,7 +255,7 @@ fn parse_property_expr(key : String) -> PropertyExpr? {
 /// 查找字符在字符串中的位置
 fn index_of(s : String, ch : Char) -> Int? {
   for i = 0; i < s.length(); i = i + 1 {
-    if s[i].unsafe_to_char() == ch {
+    if s.code_unit_at(i) == ch {
       return Some(i)
     }
   }
@@ -273,17 +273,17 @@ fn parse_int_manual(s : String) -> Int? {
   let mut start = 0
 
   // 检查负号
-  if s[0].unsafe_to_char() == '-' {
+  if s.code_unit_at(0) == '-' {
     negative = true
     start = 1
-  } else if s[0].unsafe_to_char() == '+' {
+  } else if s.code_unit_at(0) == '+' {
     start = 1
   }
   if start >= s.length() {
     return None
   }
   for i = start; i < s.length(); i = i + 1 {
-    let c = s[i].unsafe_to_char()
+    let c = s.code_unit_at(i)
     if c >= '0' && c <= '9' {
       result = result * 10 + (c.to_int() - '0'.to_int())
     } else {
@@ -305,10 +305,10 @@ fn parse_double_manual(s : String) -> Double? {
   let mut decimal_point = -1
 
   // 检查负号
-  if s[0].unsafe_to_char() == '-' {
+  if s.code_unit_at(0) == '-' {
     negative = true
     start = 1
-  } else if s[0].unsafe_to_char() == '+' {
+  } else if s.code_unit_at(0) == '+' {
     start = 1
   }
   if start >= s.length() {
@@ -317,7 +317,7 @@ fn parse_double_manual(s : String) -> Double? {
 
   // 查找小数点
   for i = start; i < s.length(); i = i + 1 {
-    if s[i].unsafe_to_char() == '.' {
+    if s.code_unit_at(i) == '.' {
       decimal_point = i
       break
     }
@@ -326,7 +326,7 @@ fn parse_double_manual(s : String) -> Double? {
   // 解析整数部分
   let end_int = if decimal_point >= 0 { decimal_point } else { s.length() }
   for i = start; i < end_int; i = i + 1 {
-    let c = s[i].unsafe_to_char()
+    let c = s.code_unit_at(i)
     if c >= '0' && c <= '9' {
       result = result * 10.0 + (c.to_int() - '0'.to_int()).to_double()
     } else {
@@ -338,7 +338,7 @@ fn parse_double_manual(s : String) -> Double? {
   if decimal_point >= 0 {
     let mut divisor = 10.0
     for i = decimal_point + 1; i < s.length(); i = i + 1 {
-      let c = s[i].unsafe_to_char()
+      let c = s.code_unit_at(i)
       if c >= '0' && c <= '9' {
         result = result + (c.to_int() - '0'.to_int()).to_double() / divisor
         divisor = divisor * 10.0
@@ -355,7 +355,7 @@ fn parse_double_manual(s : String) -> Double? {
 fn to_lower(s : String) -> String {
   let mut result = ""
   for i = 0; i < s.length(); i = i + 1 {
-    let c = s[i].unsafe_to_char()
+    let c = s.code_unit_at(i)
     if c >= 'A' && c <= 'Z' {
       result = result +
         (c.to_int() + ('a'.to_int() - 'A'.to_int()))

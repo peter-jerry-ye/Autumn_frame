@@ -9,7 +9,7 @@ pub fn url_decode(s : String) -> String {
   let mut i = 0
   let len = s.length()
   while i < len {
-    let c = s[i].unsafe_to_char()
+    let c = s.code_unit_at(i)
     if c == '%' && i + 2 < len {
       // 解析十六进制编码
       let hex = s[i + 1:i + 3].to_string() catch { _ => "" }
@@ -46,8 +46,8 @@ fn parse_hex_byte(hex : String) -> Char? {
   if c1_str.length() == 0 || c2_str.length() == 0 {
     return None
   }
-  let c1 = c1_str[0].unsafe_to_char()
-  let c2 = c2_str[0].unsafe_to_char()
+  let c1 = c1_str.code_unit_at(0)
+  let c2 = c2_str.code_unit_at(0)
   let high = hex_char_to_int(c1)
   let low = hex_char_to_int(c2)
   match (high, low) {
@@ -78,7 +78,7 @@ fn hex_char_to_int(c : Char) -> Int? {
 pub fn url_encode(s : String) -> String {
   let mut result = ""
   for i = 0; i < s.length(); i = i + 1 {
-    let c = s[i].unsafe_to_char()
+    let c = s.code_unit_at(i)
 
     // 安全字符：a-z, A-Z, 0-9, -, _, ., ~
     if (c >= 'a' && c <= 'z') ||

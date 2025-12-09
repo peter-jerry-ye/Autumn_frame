@@ -32,7 +32,7 @@ pub fn JsonResponse::new(data : JsonData) -> JsonResponse {
 fn escape_json_string(s : String) -> String {
   let mut result = ""
   for i = 0; i < s.length(); i = i + 1 {
-    let c = s[i]
+    let c = s.code_unit_at(i)
     match c {
       34 => result = result + "\\\"" // "
       92 => result = result + "\\\\" // \

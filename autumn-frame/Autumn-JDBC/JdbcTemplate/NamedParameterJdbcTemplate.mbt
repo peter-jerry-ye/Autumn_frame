@@ -55,7 +55,7 @@ fn parse_named_parameters(
   let mut i = 0
   let sql_len = sql.length()
   while i < sql_len {
-    let c = sql[i].unsafe_to_char()
+    let c = sql.code_unit_at(i)
     if c == ':' && i + 1 < sql_len {
       // 找到命名参数开始
       let mut param_name = ""
@@ -63,7 +63,7 @@ fn parse_named_parameters(
 
       // 提取参数名（字母、数字、下划线）
       while j < sql_len {
-        let next_c = sql[j].unsafe_to_char()
+        let next_c = sql.code_unit_at(j)
         if (next_c >= 'a' && next_c <= 'z') ||
           (next_c >= 'A' && next_c <= 'Z') ||
           (next_c >= '0' && next_c <= '9') ||

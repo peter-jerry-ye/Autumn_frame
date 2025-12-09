@@ -401,7 +401,7 @@ fn extract_bean_name_from_resource(resource_name : String) -> String {
   // 找到最后一个斜杠的位置
   let mut last_slash_idx = -1
   for i = 0; i < resource_name.length(); i = i + 1 {
-    if resource_name[i].unsafe_to_char() == '/' {
+    if resource_name.code_unit_at(i) == '/' {
       last_slash_idx = i
     }
   }
