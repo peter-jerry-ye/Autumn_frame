@@ -173,8 +173,8 @@ fn find(s : String, substr : String) -> Int? {
     let mut matched = true
     let mut j = 0
     while j < substr_len {
-      let s_char = s[i + j]
-      let substr_char = substr[j]
+      let s_char = s.code_unit_at(i + j)
+      let substr_char = substr.code_unit_at(j)
       if s_char != substr_char {
         matched = false
         break
@@ -200,8 +200,8 @@ fn find_from(s : String, substr : String, start : Int) -> Int? {
     let mut matched = true
     let mut j = 0
     while j < substr_len {
-      let s_char = s[i + j]
-      let substr_char = substr[j]
+      let s_char = s.code_unit_at(i + j)
+      let substr_char = substr.code_unit_at(j)
       if s_char != substr_char {
         matched = false
         break
@@ -231,7 +231,7 @@ fn parse_insert(sql : String) -> SqlStatement? {
         Some(table_end) => {
           // 提取表名（跳过空格）
           let mut table_name_start = start + 11
-          while table_name_start < table_end && sql[table_name_start] == ' ' {
+          while table_name_start < table_end && sql.code_unit_at(table_name_start) == ' ' {
             table_name_start = table_name_start + 1
           }
 
@@ -240,7 +240,7 @@ fn parse_insert(sql : String) -> SqlStatement? {
           let mut table_name = table_name_result
           let mut i = table_name_start
           while i < table_end {
-            let c = sql[i]
+            let c = sql.code_unit_at(i)
             if c != 32 { // 32 是空格的 ASCII 码
               table_name = table_name + c.unsafe_to_char().to_string()
             }
@@ -254,7 +254,7 @@ fn parse_insert(sql : String) -> SqlStatement? {
               let mut cols_str = ""
               let mut j = table_end + 1
               while j < cols_end {
-                cols_str = cols_str + sql[j].unsafe_to_char().to_string()
+                cols_str = cols_str + sql.code_unit_at(j).unsafe_to_char().to_string()
                 j = j + 1
               }
               let columns = parse_column_list(cols_str)
@@ -262,7 +262,7 @@ fn parse_insert(sql : String) -> SqlStatement? {
               // 找到 VALUES（支持大小写不敏感）
               // 先跳过可能的空格
               let mut search_start = cols_end + 1
-              while search_start < sql.length() && sql[search_start] == ' ' {
+              while search_start < sql.length() && sql.code_unit_at(search_start) == ' ' {
                 search_start = search_start + 1
               }
               let mut vals_start : Int? = None
@@ -280,7 +280,7 @@ fn parse_insert(sql : String) -> SqlStatement? {
                   let vals_len = 6 // "VALUES" 或 "values" 的长度
                   let mut paren_pos = vals_start_pos + vals_len
                   // 跳过空格
-                  while paren_pos < sql.length() && sql[paren_pos] == ' ' {
+                  while paren_pos < sql.length() && sql.code_unit_at(paren_pos) == ' ' {
                     paren_pos = paren_pos + 1
                   }
                   match find_from(sql, "(", paren_pos) {
@@ -293,7 +293,7 @@ fn parse_insert(sql : String) -> SqlStatement? {
                           let mut count = 0
                           let mut k = values_open + 1
                           while k < values_close {
-                            if sql[k] == '?' {
+                            if sql.code_unit_at(k) == '?' {
                               count = count + 1
                             }
                             k = k + 1
@@ -361,7 +361,7 @@ fn parse_select(sql : String) -> SqlStatement? {
       let mut select_part = select_part_result
       let mut i = 0
       while i < from {
-        select_part = select_part + sql[i].unsafe_to_char().to_string()
+        select_part = select_part + sql.code_unit_at(i).unsafe_to_char().to_string()
         i = i + 1
       }
       let columns = if has_prefix(select_part, "SELECT *") {
@@ -371,7 +371,7 @@ fn parse_select(sql : String) -> SqlStatement? {
         let mut cols_str = ""
         let mut j = 7 // 跳过 "SELECT "
         while j < from {
-          cols_str = cols_str + sql[j].unsafe_to_char().to_string()
+          cols_str = cols_str + sql.code_unit_at(j).unsafe_to_char().to_string()
           j = j + 1
         }
         parse_column_list(cols_str)
@@ -380,7 +380,7 @@ fn parse_select(sql : String) -> SqlStatement? {
       // 找到表名（FROM 之后，跳过空格）
       let from_start_base = from + 4
       let mut from_start = from_start_base
-      while from_start < sql.length() && sql[from_start] == ' ' {
+      while from_start < sql.length() && sql.code_unit_at(from_start) == ' ' {
         from_start = from_start + 1
       }
 
@@ -401,7 +401,7 @@ fn parse_select(sql : String) -> SqlStatement? {
           let mut table_name = table_name_result
           let mut k = from_start
           while k < where_pos {
-            let c = sql[k]
+            let c = sql.code_unit_at(k)
             if c != 32 { // 32 是空格的 ASCII 码
               table_name = table_name + c.unsafe_to_char().to_string()
             }
@@ -414,7 +414,7 @@ fn parse_select(sql : String) -> SqlStatement? {
           let where_len = 5 // "WHERE" 或 "where" 的长度
           let mut m = where_pos + where_len
           while m < sql.length() {
-            where_clause = where_clause + sql[m].unsafe_to_char().to_string()
+            where_clause = where_clause + sql.code_unit_at(m).unsafe_to_char().to_string()
             m = m + 1
           }
           Some(SqlStatement::Select(table_name, columns, Some(where_clause)))
@@ -425,7 +425,7 @@ fn parse_select(sql : String) -> SqlStatement? {
           let mut table_name = table_name_result
           let mut k = from_start
           while k < sql.length() {
-            let c = sql[k]
+            let c = sql.code_unit_at(k)
             if c != 32 { // 32 是空格的 ASCII 码
               table_name = table_name + c.unsafe_to_char().to_string()
             }
@@ -462,8 +462,8 @@ fn parse_update(sql : String) -> SqlStatement? {
       let mut table_name = ""
       let mut i = 7 // 跳过 "UPDATE "
       while i < set {
-        if sql[i] != ' ' {
-          table_name = table_name + sql[i].to_string()
+        if sql.code_unit_at(i) != ' ' {
+          table_name = table_name + sql.code_unit_at(i).to_string()
         }
         i = i + 1
       }
@@ -475,7 +475,7 @@ fn parse_update(sql : String) -> SqlStatement? {
           let mut set_clause = ""
           let mut j = set + 3 // 跳过 "SET"
           while j < where_pos {
-            set_clause = set_clause + sql[j].to_string()
+            set_clause = set_clause + sql.code_unit_at(j).to_string()
             j = j + 1
           }
 
@@ -483,7 +483,7 @@ fn parse_update(sql : String) -> SqlStatement? {
           let mut where_clause = ""
           let mut k = where_pos + 5 // 跳过 "WHERE"
           while k < sql.length() {
-            where_clause = where_clause + sql[k].to_string()
+            where_clause = where_clause + sql.code_unit_at(k).to_string()
             k = k + 1
           }
           let set_pairs = parse_set_clause(set_clause)
@@ -494,7 +494,7 @@ fn parse_update(sql : String) -> SqlStatement? {
           let mut set_clause = ""
           let mut j = set + 3 // 跳过 "SET"
           while j < sql.length() {
-            set_clause = set_clause + sql[j].to_string()
+            set_clause = set_clause + sql.code_unit_at(j).to_string()
             j = j + 1
           }
           let set_pairs = parse_set_clause(set_clause)
@@ -523,8 +523,8 @@ fn parse_delete(sql : String) -> SqlStatement? {
           let mut table_name = ""
           let mut i = from_start
           while i < where_pos {
-            if sql[i] != ' ' {
-              table_name = table_name + sql[i].to_string()
+            if sql.code_unit_at(i) != ' ' {
+              table_name = table_name + sql.code_unit_at(i).to_string()
             }
             i = i + 1
           }
@@ -533,7 +533,7 @@ fn parse_delete(sql : String) -> SqlStatement? {
           let mut where_clause = ""
           let mut j = where_pos + 5 // 跳过 "WHERE"
           while j < sql.length() {
-            where_clause = where_clause + sql[j].to_string()
+            where_clause = where_clause + sql.code_unit_at(j).to_string()
             j = j + 1
           }
           Some(SqlStatement::Delete(table_name, Some(where_clause)))
@@ -543,8 +543,8 @@ fn parse_delete(sql : String) -> SqlStatement? {
           let mut table_name = ""
           let mut i = from_start
           while i < sql.length() {
-            if sql[i] != ' ' {
-              table_name = table_name + sql[i].to_string()
+            if sql.code_unit_at(i) != ' ' {
+              table_name = table_name + sql.code_unit_at(i).to_string()
             }
             i = i + 1
           }
@@ -565,7 +565,7 @@ fn parse_column_list(cols_str : String) -> Array[String] {
   let len = cols_str.length()
   let mut i = 0
   while i < len {
-    let c = cols_str[i]
+    let c = cols_str.code_unit_at(i)
     if c == ',' {
       // 遇到逗号，保存当前列名
       let trimmed = trim(current_col)
@@ -598,7 +598,7 @@ fn parse_set_clause(set_clause : String) -> Array[(String, String)] {
   let len = set_clause.length()
   let mut i = 0
   while i < len {
-    let c = set_clause[i]
+    let c = set_clause.code_unit_at(i)
     if c == ',' {
       // 遇到逗号，解析当前对
       match find(current_pair, "=") {
@@ -607,16 +607,16 @@ fn parse_set_clause(set_clause : String) -> Array[(String, String)] {
           let mut col = ""
           let mut j = 0
           while j < eq {
-            if current_pair[j] != ' ' {
-              col = col + current_pair[j].to_string()
+            if current_pair.code_unit_at(j) != ' ' {
+              col = col + current_pair.code_unit_at(j).to_string()
             }
             j = j + 1
           }
           let mut val = ""
           let mut k = eq + 1
           while k < current_pair.length() {
-            if current_pair[k] != ' ' {
-              val = val + current_pair[k].to_string()
+            if current_pair.code_unit_at(k) != ' ' {
+              val = val + current_pair.code_unit_at(k).to_string()
             }
             k = k + 1
           }
@@ -640,16 +640,16 @@ fn parse_set_clause(set_clause : String) -> Array[(String, String)] {
         let mut col = ""
         let mut j = 0
         while j < eq {
-          if current_pair[j] != ' ' {
-            col = col + current_pair[j].to_string()
+          if current_pair.code_unit_at(j) != ' ' {
+            col = col + current_pair.code_unit_at(j).to_string()
           }
           j = j + 1
         }
         let mut val = ""
         let mut k = eq + 1
         while k < current_pair.length() {
-          if current_pair[k] != ' ' {
-            val = val + current_pair[k].to_string()
+          if current_pair.code_unit_at(k) != ' ' {
+            val = val + current_pair.code_unit_at(k).to_string()
           }
           k = k + 1
         }
