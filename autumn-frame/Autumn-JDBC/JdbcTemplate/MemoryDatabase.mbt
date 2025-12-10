@@ -231,7 +231,8 @@ fn parse_insert(sql : String) -> SqlStatement? {
         Some(table_end) => {
           // 提取表名（跳过空格）
           let mut table_name_start = start + 11
-          while table_name_start < table_end && sql.code_unit_at(table_name_start) == ' ' {
+          while table_name_start < table_end &&
+                sql.code_unit_at(table_name_start) == ' ' {
             table_name_start = table_name_start + 1
           }
 
@@ -254,7 +255,8 @@ fn parse_insert(sql : String) -> SqlStatement? {
               let mut cols_str = ""
               let mut j = table_end + 1
               while j < cols_end {
-                cols_str = cols_str + sql.code_unit_at(j).unsafe_to_char().to_string()
+                cols_str = cols_str +
+                  sql.code_unit_at(j).unsafe_to_char().to_string()
                 j = j + 1
               }
               let columns = parse_column_list(cols_str)
@@ -262,7 +264,8 @@ fn parse_insert(sql : String) -> SqlStatement? {
               // 找到 VALUES（支持大小写不敏感）
               // 先跳过可能的空格
               let mut search_start = cols_end + 1
-              while search_start < sql.length() && sql.code_unit_at(search_start) == ' ' {
+              while search_start < sql.length() &&
+                    sql.code_unit_at(search_start) == ' ' {
                 search_start = search_start + 1
               }
               let mut vals_start : Int? = None
@@ -280,7 +283,8 @@ fn parse_insert(sql : String) -> SqlStatement? {
                   let vals_len = 6 // "VALUES" 或 "values" 的长度
                   let mut paren_pos = vals_start_pos + vals_len
                   // 跳过空格
-                  while paren_pos < sql.length() && sql.code_unit_at(paren_pos) == ' ' {
+                  while paren_pos < sql.length() &&
+                        sql.code_unit_at(paren_pos) == ' ' {
                     paren_pos = paren_pos + 1
                   }
                   match find_from(sql, "(", paren_pos) {
@@ -361,7 +365,8 @@ fn parse_select(sql : String) -> SqlStatement? {
       let mut select_part = select_part_result
       let mut i = 0
       while i < from {
-        select_part = select_part + sql.code_unit_at(i).unsafe_to_char().to_string()
+        select_part = select_part +
+          sql.code_unit_at(i).unsafe_to_char().to_string()
         i = i + 1
       }
       let columns = if has_prefix(select_part, "SELECT *") {
@@ -414,7 +419,8 @@ fn parse_select(sql : String) -> SqlStatement? {
           let where_len = 5 // "WHERE" 或 "where" 的长度
           let mut m = where_pos + where_len
           while m < sql.length() {
-            where_clause = where_clause + sql.code_unit_at(m).unsafe_to_char().to_string()
+            where_clause = where_clause +
+              sql.code_unit_at(m).unsafe_to_char().to_string()
             m = m + 1
           }
           Some(SqlStatement::Select(table_name, columns, Some(where_clause)))
