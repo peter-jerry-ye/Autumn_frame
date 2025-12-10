@@ -717,7 +717,7 @@ pub fn ApplicationContext::register_factory_method(
     Some(_) => {
       // Bean 已存在，更新为工厂方法创建
       let _ = ()
-       // 显式忽略
+      // 显式忽略
     }
     None => {
       // 创建新的 BeanDefinition（工厂方法）
