@@ -209,14 +209,14 @@ fn parse_int(s : String) -> Int? {
   let mut result = 0
   let mut i = 0
   let mut negative = false
-  if s.length() > 0 && s[0] == '-' {
+  if s.length() > 0 && s.code_unit_at(0).unsafe_to_char() == '-' {
     negative = true
     i = 1
   }
   while i < s.length() {
-    let c = s[i]
+    let c = s.code_unit_at(i).unsafe_to_char()
     if c >= '0' && c <= '9' {
-      result = result * 10 + (c - '0')
+      result = result * 10 + (c.to_int() - '0'.to_int())
       i = i + 1
     } else {
       break
@@ -411,7 +411,7 @@ fn escape_json_string(s : String) -> String {
   let mut result_mut = result
   let mut i = 0
   while i < s.length() {
-    let c = s[i]
+    let c = s.code_unit_at(i)
     match c {
       '"' => result_mut = result_mut + "\\\""
       '\\' => result_mut = result_mut + "\\\\"
@@ -464,16 +464,16 @@ fn find_json_field(json : String, field_name : String) -> String? {
       let value_start = start + field_pattern.length()
       let mut i = value_start
       // 跳过空格
-      while i < json.length() && json[i] == ' ' {
+      while i < json.length() && json.code_unit_at(i) == ' ' {
         i = i + 1
       }
       // 查找值的开始（可能是数字或字符串）
       if i < json.length() {
-        if json[i] == '"' {
+        if json.code_unit_at(i) == '"' {
           // 字符串值
           let str_start = i + 1
           let mut str_end = str_start
-          while str_end < json.length() && json[str_end] != '"' {
+          while str_end < json.length() && json.code_unit_at(str_end) != '"' {
             str_end = str_end + 1
           }
           if str_end < json.length() {
@@ -487,8 +487,8 @@ fn find_json_field(json : String, field_name : String) -> String? {
           let num_start = i
           let mut num_end = num_start
           while num_end < json.length() &&
-                json[num_end] >= '0' &&
-                json[num_end] <= '9' {
+                json.code_unit_at(num_end) >= '0' &&
+                json.code_unit_at(num_end) <= '9' {
             num_end = num_end + 1
           }
           Some(extract_substring(json, num_start, num_end))
@@ -509,7 +509,7 @@ fn find_json_pattern(s : String, pattern : String) -> Int? {
     let mut matched = true
     let mut j = 0
     while j < pattern.length() {
-      if i + j >= s.length() || s[i + j] != pattern[j] {
+      if i + j >= s.length() || s.code_unit_at(i + j) != pattern.code_unit_at(j) {
         matched = false
         break
       }
@@ -531,7 +531,7 @@ fn extract_substring(s : String, start : Int, end : Int) -> String {
   let mut result_mut = result
   let mut i = start
   while i < end && i < s.length() {
-    result_mut = result_mut + s[i].to_string()
+    result_mut = result_mut + s.code_unit_at(i).to_string()
     i = i + 1
   }
   result_mut

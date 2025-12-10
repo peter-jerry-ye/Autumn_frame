@@ -1,0 +1,651 @@
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-AOP/Pointcut/Pointcut.mbt:15:3 ]
+    │
+ 15 │   Expression(String) // 表达式（如：execution(* com.example.*.*(..))）
+    │   ─────┬────  
+    │        ╰────── Warning (unused_constructor): Variant 'Expression' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-WebMVC/Exception/ExceptionHandler.mbt:22:3 ]
+    │
+ 22 │   NotFoundException(String)
+    │   ────────┬────────  
+    │           ╰────────── Warning (unused_constructor): Variant 'NotFoundException' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-WebMVC/Exception/ExceptionHandler.mbt:24:3 ]
+    │
+ 24 │   ValidationException(String)
+    │   ─────────┬─────────  
+    │            ╰─────────── Warning (unused_constructor): Variant 'ValidationException' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-WebMVC/Exception/ExceptionHandler.mbt:26:3 ]
+    │
+ 26 │   UnauthorizedException(String)
+    │   ──────────┬──────────  
+    │             ╰──────────── Warning (unused_constructor): Variant 'UnauthorizedException' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-WebMVC/Exception/ExceptionHandler.mbt:28:3 ]
+    │
+ 28 │   ForbiddenException(String)
+    │   ─────────┬────────  
+    │            ╰────────── Warning (unused_constructor): Variant 'ForbiddenException' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-WebMVC/Exception/ExceptionHandler.mbt:30:3 ]
+    │
+ 30 │   InternalServerErrorException(String)
+    │   ──────────────┬─────────────  
+    │                 ╰─────────────── Warning (unused_constructor): Variant 'InternalServerErrorException' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-WebMVC/Exception/ExceptionHandler.mbt:32:3 ]
+    │
+ 32 │   CustomException(String, String) // (异常类型, 异常消息)
+    │   ───────┬───────  
+    │          ╰───────── Warning (unused_constructor): Variant 'CustomException' is never constructed
+────╯
+Warning: [0020]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-WebMVC/Controller/RestController.mbt:35:14 ]
+    │
+ 35 │     let c = s[i]
+    │              ─┬─  
+    │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:258:9 ]
+     │
+ 258 │     if s[i].unsafe_to_char() == ch {
+     │         ─┬─  
+     │          ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:276:7 ]
+     │
+ 276 │   if s[0].unsafe_to_char() == '-' {
+     │       ─┬─  
+     │        ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:279:14 ]
+     │
+ 279 │   } else if s[0].unsafe_to_char() == '+' {
+     │              ─┬─  
+     │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:286:14 ]
+     │
+ 286 │     let c = s[i].unsafe_to_char()
+     │              ─┬─  
+     │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:308:7 ]
+     │
+ 308 │   if s[0].unsafe_to_char() == '-' {
+     │       ─┬─  
+     │        ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:311:14 ]
+     │
+ 311 │   } else if s[0].unsafe_to_char() == '+' {
+     │              ─┬─  
+     │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:320:9 ]
+     │
+ 320 │     if s[i].unsafe_to_char() == '.' {
+     │         ─┬─  
+     │          ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:329:14 ]
+     │
+ 329 │     let c = s[i].unsafe_to_char()
+     │              ─┬─  
+     │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:341:16 ]
+     │
+ 341 │       let c = s[i].unsafe_to_char()
+     │                ─┬─  
+     │                 ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/PropertyResolver/PropertyResolver.mbt:358:14 ]
+     │
+ 358 │     let c = s[i].unsafe_to_char()
+     │              ─┬─  
+     │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/ResourceResolver/UrlDecoder.mbt:12:14 ]
+    │
+ 12 │     let c = s[i].unsafe_to_char()
+    │              ─┬─  
+    │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+────╯
+Warning: [0020]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/ResourceResolver/UrlDecoder.mbt:49:18 ]
+    │
+ 49 │   let c1 = c1_str[0].unsafe_to_char()
+    │                  ─┬─  
+    │                   ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+────╯
+Warning: [0020]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/ResourceResolver/UrlDecoder.mbt:50:18 ]
+    │
+ 50 │   let c2 = c2_str[0].unsafe_to_char()
+    │                  ─┬─  
+    │                   ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+────╯
+Warning: [0020]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/ResourceResolver/UrlDecoder.mbt:81:14 ]
+    │
+ 81 │     let c = s[i].unsafe_to_char()
+    │              ─┬─  
+    │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/DataAccessException.mbt:20:3 ]
+    │
+ 20 │   DataRetrievalFailureException(String) // 数据检索失败（如：查询失败）
+    │   ──────────────┬──────────────  
+    │                 ╰──────────────── Warning (unused_constructor): Variant 'DataRetrievalFailureException' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/DataAccessException.mbt:24:3 ]
+    │
+ 24 │   QueryTimeoutException(String) // 查询超时
+    │   ──────────┬──────────  
+    │             ╰──────────── Warning (unused_constructor): Variant 'QueryTimeoutException' is never constructed
+────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:212:25 ]
+     │
+ 212 │   if s.length() > 0 && s[0] == '-' {
+     │                         ─┬─  
+     │                          ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:217:14 ]
+     │
+ 217 │     let c = s[i]
+     │              ─┬─  
+     │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:414:14 ]
+     │
+ 414 │     let c = s[i]
+     │              ─┬─  
+     │               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:467:38 ]
+     │
+ 467 │       while i < json.length() && json[i] == ' ' {
+     │                                      ─┬─  
+     │                                       ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:472:16 ]
+     │
+ 472 │         if json[i] == '"' {
+     │                ─┬─  
+     │                 ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:476:48 ]
+     │
+ 476 │           while str_end < json.length() && json[str_end] != '"' {
+     │                                                ────┬────  
+     │                                                    ╰────── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:490:21 ]
+     │
+ 490 │                 json[num_end] >= '0' &&
+     │                     ────┬────  
+     │                         ╰────── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:491:21 ]
+     │
+ 491 │                 json[num_end] <= '9' {
+     │                     ────┬────  
+     │                         ╰────── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:512:34 ]
+     │
+ 512 │       if i + j >= s.length() || s[i + j] != pattern[j] {
+     │                                  ───┬───  
+     │                                     ╰───── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:512:52 ]
+     │
+ 512 │       if i + j >= s.length() || s[i + j] != pattern[j] {
+     │                                                    ─┬─  
+     │                                                     ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/HttpDataSource.mbt:534:32 ]
+     │
+ 534 │     result_mut = result_mut + s[i].to_string()
+     │                                ─┬─  
+     │                                 ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:176:21 ]
+     │
+ 176 │       let s_char = s[i + j]
+     │                     ───┬───  
+     │                        ╰───── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:177:31 ]
+     │
+ 177 │       let substr_char = substr[j]
+     │                               ─┬─  
+     │                                ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:203:21 ]
+     │
+ 203 │       let s_char = s[i + j]
+     │                     ───┬───  
+     │                        ╰───── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:204:31 ]
+     │
+ 204 │       let substr_char = substr[j]
+     │                               ─┬─  
+     │                                ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:234:52 ]
+     │
+ 234 │           while table_name_start < table_end && sql[table_name_start] == ' ' {
+     │                                                    ─────────┬────────  
+     │                                                             ╰────────── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:243:24 ]
+     │
+ 243 │             let c = sql[i]
+     │                        ─┬─  
+     │                         ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:257:42 ]
+     │
+ 257 │                 cols_str = cols_str + sql[j].unsafe_to_char().to_string()
+     │                                          ─┬─  
+     │                                           ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:265:55 ]
+     │
+ 265 │               while search_start < sql.length() && sql[search_start] == ' ' {
+     │                                                       ───────┬──────  
+     │                                                              ╰──────── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:283:56 ]
+     │
+ 283 │                   while paren_pos < sql.length() && sql[paren_pos] == ' ' {
+     │                                                        ─────┬─────  
+     │                                                             ╰─────── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:296:35 ]
+     │
+ 296 │                             if sql[k] == '?' {
+     │                                   ─┬─  
+     │                                    ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:364:40 ]
+     │
+ 364 │         select_part = select_part + sql[i].unsafe_to_char().to_string()
+     │                                        ─┬─  
+     │                                         ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:374:36 ]
+     │
+ 374 │           cols_str = cols_str + sql[j].unsafe_to_char().to_string()
+     │                                    ─┬─  
+     │                                     ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:383:45 ]
+     │
+ 383 │       while from_start < sql.length() && sql[from_start] == ' ' {
+     │                                             ──────┬─────  
+     │                                                   ╰─────── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:404:24 ]
+     │
+ 404 │             let c = sql[k]
+     │                        ─┬─  
+     │                         ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:417:46 ]
+     │
+ 417 │             where_clause = where_clause + sql[m].unsafe_to_char().to_string()
+     │                                              ─┬─  
+     │                                               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:428:24 ]
+     │
+ 428 │             let c = sql[k]
+     │                        ─┬─  
+     │                         ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:465:15 ]
+     │
+ 465 │         if sql[i] != ' ' {
+     │               ─┬─  
+     │                ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:466:40 ]
+     │
+ 466 │           table_name = table_name + sql[i].to_string()
+     │                                        ─┬─  
+     │                                         ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:478:42 ]
+     │
+ 478 │             set_clause = set_clause + sql[j].to_string()
+     │                                          ─┬─  
+     │                                           ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:486:46 ]
+     │
+ 486 │             where_clause = where_clause + sql[k].to_string()
+     │                                              ─┬─  
+     │                                               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:497:42 ]
+     │
+ 497 │             set_clause = set_clause + sql[j].to_string()
+     │                                          ─┬─  
+     │                                           ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:526:19 ]
+     │
+ 526 │             if sql[i] != ' ' {
+     │                   ─┬─  
+     │                    ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:527:44 ]
+     │
+ 527 │               table_name = table_name + sql[i].to_string()
+     │                                            ─┬─  
+     │                                             ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:536:46 ]
+     │
+ 536 │             where_clause = where_clause + sql[j].to_string()
+     │                                              ─┬─  
+     │                                               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:546:19 ]
+     │
+ 546 │             if sql[i] != ' ' {
+     │                   ─┬─  
+     │                    ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:547:44 ]
+     │
+ 547 │               table_name = table_name + sql[i].to_string()
+     │                                            ─┬─  
+     │                                             ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:568:21 ]
+     │
+ 568 │     let c = cols_str[i]
+     │                     ─┬─  
+     │                      ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:601:23 ]
+     │
+ 601 │     let c = set_clause[i]
+     │                       ─┬─  
+     │                        ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:610:28 ]
+     │
+ 610 │             if current_pair[j] != ' ' {
+     │                            ─┬─  
+     │                             ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:611:39 ]
+     │
+ 611 │               col = col + current_pair[j].to_string()
+     │                                       ─┬─  
+     │                                        ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:618:28 ]
+     │
+ 618 │             if current_pair[k] != ' ' {
+     │                            ─┬─  
+     │                             ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:619:39 ]
+     │
+ 619 │               val = val + current_pair[k].to_string()
+     │                                       ─┬─  
+     │                                        ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:643:26 ]
+     │
+ 643 │           if current_pair[j] != ' ' {
+     │                          ─┬─  
+     │                           ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:644:37 ]
+     │
+ 644 │             col = col + current_pair[j].to_string()
+     │                                     ─┬─  
+     │                                      ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:651:26 ]
+     │
+ 651 │           if current_pair[k] != ' ' {
+     │                          ─┬─  
+     │                           ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/MemoryDatabase.mbt:652:37 ]
+     │
+ 652 │             val = val + current_pair[k].to_string()
+     │                                     ─┬─  
+     │                                      ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/NamedParameterJdbcTemplate.mbt:58:16 ]
+    │
+ 58 │     let c = sql[i].unsafe_to_char()
+    │                ─┬─  
+    │                 ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+────╯
+Warning: [0020]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/NamedParameterJdbcTemplate.mbt:66:25 ]
+    │
+ 66 │         let next_c = sql[j].unsafe_to_char()
+    │                         ─┬─  
+    │                          ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/SQLErrorCodeTranslator.mbt:206:30 ]
+     │
+ 206 │         let c = error_message[i].unsafe_to_char()
+     │                              ─┬─  
+     │                               ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/JdbcTemplate/SQLErrorCodeTranslator.mbt:219:33 ]
+     │
+ 219 │           let c = error_code_str[i].unsafe_to_char()
+     │                                 ─┬─  
+     │                                  ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+failed: gcc -c -I$HOME/.moon/include -I/usr/include/mysql -fwrapv -fno-strict-aliasing -O2 /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/mysql-demo/mysql_wrapper.c -o /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/mysql-demo/mysql_wrapper.o
+/private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/mysql-demo/mysql_wrapper.c:8:10: fatal error: 'mysql/mysql.h' file not found
+    8 | #include <mysql/mysql.h>
+      |          ^~~~~~~~~~~~~~~
+1 error generated.
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Boot/Server/Server.mbt:414:21 ]
+     │
+ 414 │         let c = body[i]
+     │                     ─┬─  
+     │                      ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0020]
+     ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-Ioc/ApplicationContext/ApplicationContext.mbt:404:21 ]
+     │
+ 404 │     if resource_name[i].unsafe_to_char() == '/' {
+     │                     ─┬─  
+     │                      ╰─── Warning (deprecated): Use `code_unit_at` instead which returns UInt16
+─────╯
+Warning: [0002]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/boot-demo/main.mbt:16:20 ]
+    │
+ 16 │       .get("/", fn(request : @Http.HttpRequest) {
+    │                    ───┬───  
+    │                       ╰───── Warning (unused_value): Unused variable 'request'
+────╯
+Warning: [0002]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/boot-demo/main.mbt:31:10 ]
+    │
+ 31 │       fn(request : @Http.HttpRequest) {
+    │          ───┬───  
+    │             ╰───── Warning (unused_value): Unused variable 'request'
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/PlatformTransactionManager.mbt:11:3 ]
+    │
+ 11 │   Committed // 已提交
+    │   ────┬────  
+    │       ╰────── Warning (unused_constructor): Variant 'Committed' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/PlatformTransactionManager.mbt:12:3 ]
+    │
+ 12 │   RolledBack // 已回滚
+    │   ─────┬────  
+    │        ╰────── Warning (unused_constructor): Variant 'RolledBack' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/PlatformTransactionManager.mbt:13:3 ]
+    │
+ 13 │   Unknown // 未知状态
+    │   ───┬───  
+    │      ╰───── Warning (unused_constructor): Variant 'Unknown' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:11:3 ]
+    │
+ 11 │   ReadUncommitted // 读未提交（最低隔离级别）
+    │   ───────┬───────  
+    │          ╰───────── Warning (unused_constructor): Variant 'ReadUncommitted' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:12:3 ]
+    │
+ 12 │   ReadCommitted // 读已提交
+    │   ──────┬──────  
+    │         ╰──────── Warning (unused_constructor): Variant 'ReadCommitted' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:13:3 ]
+    │
+ 13 │   RepeatableRead // 可重复读
+    │   ───────┬──────  
+    │          ╰──────── Warning (unused_constructor): Variant 'RepeatableRead' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:14:3 ]
+    │
+ 14 │   Serializable // 串行化（最高隔离级别）
+    │   ──────┬─────  
+    │         ╰─────── Warning (unused_constructor): Variant 'Serializable' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:23:3 ]
+    │
+ 23 │   Supports // 如果当前存在事务，则加入该事务；如果当前不存在事务，则以非事务的方式继续运行
+    │   ────┬───  
+    │       ╰───── Warning (unused_constructor): Variant 'Supports' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:24:3 ]
+    │
+ 24 │   Mandatory // 如果当前存在事务，则加入该事务；如果当前不存在事务，则抛出异常
+    │   ────┬────  
+    │       ╰────── Warning (unused_constructor): Variant 'Mandatory' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:25:3 ]
+    │
+ 25 │   RequiresNew // 创建一个新的事务，如果当前存在事务，则把当前事务挂起
+    │   ─────┬─────  
+    │        ╰─────── Warning (unused_constructor): Variant 'RequiresNew' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:26:3 ]
+    │
+ 26 │   NotSupported // 以非事务方式运行，如果当前存在事务，则把当前事务挂起
+    │   ──────┬─────  
+    │         ╰─────── Warning (unused_constructor): Variant 'NotSupported' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:27:3 ]
+    │
+ 27 │   Never // 以非事务方式运行，如果当前存在事务，则抛出异常
+    │   ──┬──  
+    │     ╰──── Warning (unused_constructor): Variant 'Never' is never constructed
+────╯
+Warning: [0006]
+    ╭─[ /private/tmp/parallel-fix/PingGuoMiaoMiao/Autumn_frame/autumn-frame/Autumn-JDBC/Transaction/TransactionDefinition.mbt:28:3 ]
+    │
+ 28 │   Nested // 如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则等价于 Required
+    │   ───┬──  
+    │      ╰──── Warning (unused_constructor): Variant 'Nested' is never constructed
+────╯
+Failed with 92 warnings, 0 errors.
+error: failed when checking project

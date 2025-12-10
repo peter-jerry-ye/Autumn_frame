@@ -13,13 +13,13 @@ fn main {
 
     // 2. 创建 Controller（示例）
     let user_controller = @Controller.Controller::new("/users")
-      .get("/", fn(request : @Http.HttpRequest) {
+      .get("/", fn(_request : @Http.HttpRequest) {
         @Http.HttpResponse::ok(
           "<html><body><h1>用户列表</h1></body></html>",
         )
       })
-      .get("/{id}", fn(request : @Http.HttpRequest) {
-        let path = request.get_path()
+      .get("/{id}", fn(_request : @Http.HttpRequest) {
+        let path = _request.get_path()
         @Http.HttpResponse::ok(
           "<html><body><h1>用户详情: " + path + "</h1></body></html>",
         )
@@ -28,7 +28,7 @@ fn main {
     // 3. 创建 RestController（示例）
     let api_controller = @Controller.RestController::new("/api/users").get(
       "/",
-      fn(request : @Http.HttpRequest) {
+      fn(_request : @Http.HttpRequest) {
         let data = @hashmap.new()
         data.set("id", "1")
         data.set("name", "Alice")

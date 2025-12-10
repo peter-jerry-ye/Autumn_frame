@@ -203,7 +203,7 @@ fn extract_mysql_error_code(error_message : String) -> Int? {
       let mut error_code_str = ""
       let mut i = start_pos
       while i < error_message.length() {
-        let c = error_message[i].unsafe_to_char()
+        let c = error_message.code_unit_at(i).unsafe_to_char()
         if c >= '0' && c <= '9' {
           error_code_str = error_code_str + c.to_string()
           i = i + 1
@@ -216,7 +216,7 @@ fn extract_mysql_error_code(error_message : String) -> Int? {
         let mut code = 0
         let mut i = 0
         while i < error_code_str.length() {
-          let c = error_code_str[i].unsafe_to_char()
+          let c = error_code_str.code_unit_at(i).unsafe_to_char()
           if c >= '0' && c <= '9' {
             code = code * 10 + (c.to_int() - '0'.to_int())
             i = i + 1
