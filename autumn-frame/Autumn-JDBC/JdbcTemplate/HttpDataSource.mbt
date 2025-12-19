@@ -141,7 +141,7 @@ pub fn HttpDataSource::execute(
 /// 2. 序列化 JSON 请求体
 /// 3. 解析 JSON 响应
 /// 4. 处理错误
-pub async fn HttpDataSource::async_execute(
+pub fn HttpDataSource::async_execute(
   self : HttpDataSource,
   sql : String,
   params : Array[String],
@@ -272,7 +272,7 @@ pub fn HttpDataSource::query(
 /// 2. 解析 JSON 响应
 /// 3. 将第一行转换为 HashMap
 /// 4. 使用 row_mapper 映射
-pub async fn HttpDataSource::async_query(
+pub fn HttpDataSource::async_query(
   self : HttpDataSource,
   sql : String,
   params : Array[String],
@@ -340,7 +340,7 @@ pub fn HttpDataSource::batch_execute(
 /// 1. POST /api/db/batch
 /// 2. Body: {"sql": "...", "params_list": [[...], [...]]}
 /// 3. Response: {"affected_rows": [1, 1, 1]}
-pub async fn HttpDataSource::async_batch_execute(
+pub fn HttpDataSource::async_batch_execute(
   self : HttpDataSource,
   sql : String,
   params_list : Array[Array[String]],
