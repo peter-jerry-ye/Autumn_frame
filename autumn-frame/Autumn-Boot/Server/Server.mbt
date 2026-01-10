@@ -11,6 +11,7 @@
 // ========== 导入依赖 ==========
 
 // FFI 函数声明（仅 native 后端）
+
 ///|
 /// 创建 TCP socket 并绑定端口
 /// 返回值：socket 文件描述符，失败返回 -1
@@ -411,7 +412,7 @@ pub fn EmbeddedServer::format_response(response : @Http.HttpResponse) -> String 
       // 计算 UTF-8 字节数（中文字符在 UTF-8 中占用 3 字节）
       let mut utf8_byte_count = 0
       for i = 0; i < body.length(); i = i + 1 {
-        let c = body[i]
+        let c = body.code_unit_at(i)
         // 计算每个字符的 UTF-8 字节数
         if c < 0x80 {
           // ASCII 字符：1 字节
